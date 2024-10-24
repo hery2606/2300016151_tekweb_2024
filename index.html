@@ -18,9 +18,10 @@
 
         <!-- Bagian Fitur Kontrol -->
         <div class="controls-section">
-            <h2>Customize Page</h2>
+            <h2>Customize</h2>
             <div class="controls">
-                <!-- Dropdown untuk mengubah warna latar belakang -->
+
+                <!-- untuk mengubah warna latar belakang -->
                 <div class="control-item">
                     <label for="background-color">Background Color:</label>
                     <select id="background-color">
@@ -39,16 +40,33 @@
 
                 <!-- Tombol untuk mengaktifkan mode gelap -->
                 <div class="control-item">
-                    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+                    <button id="dark-mode-toggle">Dark Mode</button>
                 </div>
 
-                <!-- Dropdown untuk mengubah gaya font -->
+                <!-- untuk mengubah gaya font -->
                 <div class="control-item">
                     <label for="font-style">Font Style:</label>
                     <select id="font-style">
                         <option value="'Arial', sans-serif">Sans-Serif (Default)</option>
                         <option value="'Times New Roman', serif">Serif</option>
+                        <option value="'Courier New', monospace">Monospace</option>
+                        <option value="'Georgia', serif">Georgia</option>
+                        <option value="'Lucida Console', monospace">Lucida Console</option>
+                        <option value="'Verdana', sans-serif">Verdana</option>
+                        <option value="'Comic Sans MS', cursive, sans-serif">Comic Sans</option>
+  
                     </select>
+                     <!-- untuk mengubah tema -->
+                    <div class="control-item">
+                        <label for="theme-selector">pilih tema:</label>
+                        <select id="theme-selector">
+                            <option value="default">Default</option>
+                            <option value="ocean">Ocean</option>
+                            <option value="sunset">Sunset</option>
+                            <option value="forest">Forest</option>
+                        </select>
+                    </div>
+                    
                 </div>
             </div>
         </div>
