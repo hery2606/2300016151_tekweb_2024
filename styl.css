@@ -1,0 +1,275 @@
+/* Mengatur background dan font */
+body {
+    background-color: #e0f7fa; /* Mengganti warna latar belakang */
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background-color: #fff;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Lebih menonjolkan bayangan */
+    border-radius: 15px; /* Membuat sudut lebih melengkung */
+    transition: transform 0.3s ease;
+}
+
+.container:hover {
+    transform: scale(1.02); /* Memberikan efek zoom halus saat di-hover */
+}
+
+h1 {
+    text-align: center;
+    color: #00796b; /* Warna judul yang lebih cerah */
+    margin-bottom: 20px;
+}
+
+/* Styling input dan tombol */
+.input-container {
+    display: flex ;
+    justify-content: space-between;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #00796b; /* Ubah warna border saat input di-focus */
+}
+
+button {
+    padding: 12px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-left: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Styling untuk setiap tombol */
+button.add {
+    background-color: #4CAF50;
+    color: white;
+}
+
+button.add:hover {
+    background-color: #45a049;
+}
+
+button.edit {
+    background-color: #1E90FF;
+    color: white;
+}
+
+button.edit:hover {
+    background-color: #187bcd;
+}
+
+button.delete {
+    background-color: #f44336;
+    color: white;
+}
+
+button.delete:hover {
+    background-color: #da190b;
+}
+
+/* Styling untuk daftar to-do */
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+ul li {
+    background-color: #f1f8e9;
+    margin: 5px 0;
+    padding: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    transition: transform 0.3s ease;
+}
+
+ul li:hover {
+    transform: translateX(5px); /* Efek animasi saat di-hover */
+}
+
+ul li span {
+    flex-grow: 1;
+    margin-left: 10px;
+    font-size: 16px;
+}
+
+/* CSS untuk mode gelap */
+body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+}
+
+body.dark-mode .container {
+    background-color: #444;
+    color: #f0f0f0;
+}
+
+body.dark-mode input[type="text"], body.dark-mode button {
+    background-color: #555;
+    color: white;
+}
+
+body.dark-mode ul li {
+    background-color: #555;
+    color: white;
+}
+
+
+
+
+/* Layout untuk memisahkan kontrol fitur dan to-do list */
+.layout {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    gap: 40px;
+}
+
+.controls-section, .todo-section {
+    width: 90%; /* Setiap bagian mengambil 45% dari lebar halaman */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+}
+
+.controls-section h2, .todo-section h2 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 20px;
+}
+
+/* Styling untuk elemen fitur tambahan */
+.controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: space-between;
+}
+
+.control-item {
+    flex: 1;
+    min-width: 150px;
+    display: flex;
+    flex-direction: column;
+}
+
+.control-item label {
+    margin-bottom: 5px;
+    font-size: 14px;
+    color: #00796b;
+}
+
+.control-item select, .control-item input[type="range"], .control-item button {
+    padding: 8px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    outline: none;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+#dark-mode-toggle {
+    background-color: #00796b;
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+#dark-mode-toggle:hover {
+    background-color: #004d40;
+}
+
+/* Style untuk task list */
+.input-container {
+    display: flex ;
+    justify-content: space-between;
+}
+
+input[type="text"] {
+    width: 70%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+    border-color: #00796b;
+}
+
+
+
+button.add:hover {
+    background-color: #45a049;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Mengatur container agar semuanya berada di satu kolom */
+.container {
+    background-color: #fff;
+    width: 400px;
+    padding: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;  /* Menambah jarak antar elemen */
+}
+
+h2 {
+    text-align: center;
+    color: #00796b;
+    margin-bottom: 20px;
+}
