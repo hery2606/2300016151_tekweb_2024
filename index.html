@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My To-Do List</title>
+    <link rel="stylesheet" href="styl.css"> 
+</head>
+<body>
+    <div class="container">
+        <!-- Bagian My To-Do List -->
+        <h2>My To-Do List</h2>
+        <div class="input-container">
+            <input type="text" placeholder="Add a new task..." id="new-task">
+            <button class="add">Add</button>
+        </div>
+        <ul id="task-list"></ul>
+
+        <!-- Bagian Fitur Kontrol -->
+        <div class="controls-section">
+            <h2>Customize Page</h2>
+            <div class="controls">
+                <!-- Dropdown untuk mengubah warna latar belakang -->
+                <div class="control-item">
+                    <label for="background-color">Background Color:</label>
+                    <select id="background-color">
+                        <option value="#e0f7fa">Default</option>
+                        <option value="#f8bbd0">Pink</option>
+                        <option value="#ffeb3b">Yellow</option>
+                        <option value="#c8e6c9">Green</option>
+                    </select>
+                </div>
+
+                <!-- Penggeser untuk mengubah ukuran font -->
+                <div class="control-item">
+                    <label for="font-size-slider">Font Size:</label>
+                    <input type="range" id="font-size-slider" min="10" max="30" value="16">
+                </div>
+
+                <!-- Tombol untuk mengaktifkan mode gelap -->
+                <div class="control-item">
+                    <button id="dark-mode-toggle">Toggle Dark Mode</button>
+                </div>
+
+                <!-- Dropdown untuk mengubah gaya font -->
+                <div class="control-item">
+                    <label for="font-style">Font Style:</label>
+                    <select id="font-style">
+                        <option value="'Arial', sans-serif">Sans-Serif (Default)</option>
+                        <option value="'Times New Roman', serif">Serif</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script> 
+</body>
+</html>
