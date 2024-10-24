@@ -1,6 +1,6 @@
 /* Mengatur background dan font */
 body {
-    background-color: #e0f7fa; /* Mengganti warna latar belakang */
+    background-color: #e0f7fa; 
     font-family: 'Arial', sans-serif;
     display: flex;
     justify-content: center;
@@ -13,18 +13,18 @@ body {
     background-color: #fff;
     width: 400px;
     padding: 20px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Lebih menonjolkan bayangan */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
     border-radius: 15px; /* Membuat sudut lebih melengkung */
     transition: transform 0.3s ease;
 }
 
 .container:hover {
-    transform: scale(1.02); /* Memberikan efek zoom halus saat di-hover */
+    transform: scale(1.02); 
 }
 
 h1 {
     text-align: center;
-    color: #00796b; /* Warna judul yang lebih cerah */
+    color: #00796b;
     margin-bottom: 20px;
 }
 
@@ -44,7 +44,7 @@ input[type="text"] {
 }
 
 input[type="text"]:focus {
-    border-color: #00796b; /* Ubah warna border saat input di-focus */
+    border-color: #00796b;
 }
 
 button {
@@ -57,33 +57,49 @@ button {
     transition: background-color 0.3s ease;
 }
 
-/* Styling untuk setiap tombol */
-button.add {
-    background-color: #4CAF50;
-    color: white;
+/* Tombol Delete dan Edit dengan tampilan menarik */
+button.edit, button.delete {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px; /* Jarak antara ikon dan teks */
+    padding: 10px 15px;
+    border: none;
+    border-radius: 30px; /* Membuat sudut tombol bulat */
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan */
 }
 
-button.add:hover {
-    background-color: #45a049;
-}
-
+/* Tombol Edit */
 button.edit {
-    background-color: #1E90FF;
+    background: linear-gradient(45deg, #42a5f5, #1e88e5); 
     color: white;
 }
 
 button.edit:hover {
-    background-color: #187bcd;
+    background: linear-gradient(45deg, #1e88e5, #1565c0); 
+    transform: scale(1.1); 
 }
 
+/* Tombol Delete */
 button.delete {
-    background-color: #f44336;
+    background: linear-gradient(45deg, #ef5350, #e53935); 
     color: white;
 }
 
 button.delete:hover {
-    background-color: #da190b;
+    background: linear-gradient(45deg, #e53935, #b71c1c); 
+    transform: scale(1.1);
 }
+
+/* Efek aktif saat tombol ditekan */
+button.edit:active, button.delete:active {
+    transform: scale(0.95); 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
 
 /* Styling untuk daftar to-do */
 ul {
@@ -231,6 +247,9 @@ ul {
     padding: 0;
 }
 
+ul li span {
+    transition: font-size 0.2s ease; /* Animasi halus saat mengubah ukuran font */
+}
 
 
 
@@ -272,4 +291,82 @@ h2 {
     text-align: center;
     color: #00796b;
     margin-bottom: 20px;
+}
+
+
+/* Mode Gelap untuk Customize Page */
+body.dark-mode .controls-section {
+    background-color: #333;
+    color: #f0f0f0;
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode .control-item label {
+    color: #f0f0f0;
+}
+
+body.dark-mode select,
+body.dark-mode input[type="range"],
+body.dark-mode button {
+    background-color: #555;
+    color: white;
+    border-color: #777;
+}
+
+body.dark-mode select:focus,
+body.dark-mode input[type="range"]:focus {
+    border-color: #4caf50;
+}
+
+
+
+/* Tema Default */
+body.default {
+    background-color: #e0f7fa;
+    color: #00796b;
+}
+
+/* Tema Ocean */
+body.ocean {
+    background-color: #01579b; 
+    color: #b3e5fc;
+}
+
+body.ocean button {
+    background: linear-gradient(45deg, #0288d1, #0277bd);
+    color: white;
+}
+
+body.ocean button:hover {
+    background: linear-gradient(45deg, #0277bd, #01579b);
+}
+
+/* Tema Sunset */
+body.sunset {
+    background-color: #ff7043; 
+    color: #fff3e0;
+}
+
+body.sunset button {
+    background: linear-gradient(45deg, #ff8a65, #d84315);
+    color: white;
+}
+
+body.sunset button:hover {
+    background: linear-gradient(45deg, #d84315, #bf360c);
+}
+
+/* Tema Forest */
+body.forest {
+    background-color: #2e7d32;
+    color: #a5d6a7;
+}
+
+body.forest button {
+    background: linear-gradient(45deg, #388e3c, #1b5e20);
+    color: white;
+}
+
+body.forest button:hover {
+    background: linear-gradient(45deg, #1b5e20, #004d40);
 }
