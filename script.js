@@ -100,10 +100,6 @@ fontStyleSelector.addEventListener('change', (e) => {
 
 
 
-
-
-
-
 //fungsi untuk mengedit task
 function editTask(taskSpan) {
     const currentText = taskSpan.textContent;
@@ -133,22 +129,6 @@ function editTask(taskSpan) {
         }
     });
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
