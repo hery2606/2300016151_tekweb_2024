@@ -6,7 +6,7 @@ const fontSizeSlider = document.querySelector('#font-size-slider');
 const darkModeToggle = document.querySelector('#dark-mode-toggle');
 const fontStyleSelector = document.querySelector('#font-style');
 
-// Fungsi untuk menambah task baru
+// menambahkan task baru
 addButton.addEventListener('click', addTask);
 
 // Event Listener untuk menambahkan task ketika menekan Enter
@@ -16,13 +16,13 @@ taskInput.addEventListener('keypress', (e) => {
     }
 });
 
-// Fungsi untuk menambahkan task ke dalam list
+// menambahkan task ke dalam list
 function addTask() {
-    const taskValue = taskInput.value.trim();  // Menghapus spasi kosong di awal/akhir
+    const taskValue = taskInput.value.trim();  
     if (taskValue) {
         addTaskToList(taskValue);
-        taskInput.value = '';  // Kosongkan input setelah menambahkan task
-        taskInput.focus();  // Kembalikan fokus ke input
+        taskInput.value = '';  
+        taskInput.focus();  
     } else {
         alert('Masukkan task terlebih dahulu!');
     }
@@ -30,9 +30,8 @@ function addTask() {
 
 function addTaskToList(task) {
     const li = document.createElement('li');
-    li.classList.add('task-item');  // Tambahkan kelas untuk styling
+    li.classList.add('task-item'); 
 
-    // Buat checkbox untuk menandai tugas sebagai selesai
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     checkbox.classList.add('complete-checkbox');
@@ -40,24 +39,24 @@ function addTaskToList(task) {
     const taskSpan = document.createElement('span');
     taskSpan.textContent = task;
 
+    // Membuat tombol Edit dengan ikon pensil
     const editButton = document.createElement('button');
-    editButton.textContent = 'Edit';
+    editButton.innerHTML = '✏️ Edit';
     editButton.classList.add('edit');
 
+    // Membuat tombol Delete dengan ikon tong sampah
     const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
+    deleteButton.innerHTML = '🗑️ Delete';
     deleteButton.classList.add('delete');
 
-    // Event untuk tombol Edit
     editButton.addEventListener('click', () => {
-        editTask(taskSpan); // Panggil fungsi editTask di sini
+        editTask(taskSpan); 
     });
-
 
     deleteButton.addEventListener('click', () => {
         li.style.transition = 'opacity 0.3s ease';
         li.style.opacity = '0';
-        setTimeout(() => li.remove(), 300); // Animasi saat dihapus
+        setTimeout(() => li.remove(), 300); 
     });
     li.appendChild(checkbox);
     li.appendChild(taskSpan);
@@ -76,17 +75,22 @@ backgroundColorSelector.addEventListener('change', (e) => {
     document.body.style.backgroundColor = e.target.value;
 });
 
-// Mengubah ukuran font
+// untuk ukuran font hanya untuk daftar to-do
 fontSizeSlider.addEventListener('input', (e) => {
-    document.body.style.fontSize = e.target.value + 'px';
+    const taskItems = document.querySelectorAll('#task-list li span'); 
+    taskItems.forEach(item => {
+        item.style.fontSize = e.target.value + 'px'; 
+    });
 });
 
-// Alihkan mode gelap
+
+// untuk mode gelap
 darkModeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
 });
 
-// Ubah gaya font
+
+// vode untuk mengubah font sytl
 fontStyleSelector.addEventListener('change', (e) => {
     document.body.style.fontFamily = e.target.value;
 });
@@ -100,6 +104,7 @@ fontStyleSelector.addEventListener('change', (e) => {
 
 
 
+//fungsi untuk mengedit task
 function editTask(taskSpan) {
     const currentText = taskSpan.textContent;
     const input = document.createElement('input');
@@ -128,3 +133,32 @@ function editTask(taskSpan) {
         }
     });
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Fungsi untuk mengubah tema
+
+const themeSelector = document.querySelector('#theme-selector');
+themeSelector.addEventListener('change', (e) => {
+    const selectedTheme = e.target.value;
+    document.body.className = ''; // Reset semua kelas tema
+    document.body.classList.add(selectedTheme); // Tambahkan kelas tema baru
+});
